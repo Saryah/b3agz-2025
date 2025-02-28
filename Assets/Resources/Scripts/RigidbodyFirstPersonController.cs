@@ -19,6 +19,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     private float _xRotation = 0f;
     private bool _isCrouching = false;
+    [SerializeField] private LayerMask groundLayer;
 
     private void Awake()
     {
@@ -98,7 +99,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     private bool IsGrounded()
     {
         // Simple ground check
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f);
+        return Physics.Raycast(transform.position, Vector3.down, 1.2f);
     }
 
     private void HandleCrouch()

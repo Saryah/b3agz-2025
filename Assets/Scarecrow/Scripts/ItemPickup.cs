@@ -12,6 +12,7 @@ public class ItemPickup : MonoBehaviour
     private bool isHolding;
     RaycastHit hit;
     Ray ray;
+    private bool dropOff;
     
     void Start()
     {
@@ -36,6 +37,13 @@ public class ItemPickup : MonoBehaviour
 
         if (!isHolding && itemPickedUp != null)
             DisplayObject();
+        if (dropOff)
+        {
+            GameObject itemToDestroy = GameObject.FindWithTag("Held");
+            Destroy(itemToDestroy);
+            itemPickedUp = null;
+            isHolding = false;
+        }
     }
 
     void FindObj()
@@ -45,7 +53,18 @@ public class ItemPickup : MonoBehaviour
     
     void DisplayObject()
     {
-        Instantiate(itemPickedUp, itemDisplay);
+        GameObject objectToHold = Instantiate(itemPickedUp, itemDisplay);;
+        objectToHold.tag = "Held";
         isHolding = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        dropOff = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        dropOff = false;
     }
 }
