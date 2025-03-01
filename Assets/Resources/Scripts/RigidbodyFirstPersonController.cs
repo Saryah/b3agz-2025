@@ -45,16 +45,15 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        
+        MovePlayer();
+        HandleJump();   
         LookAround();
         HandleCrouch();
     }
-
-    [System.Obsolete]
+    
     private void FixedUpdate()
     {
-        MovePlayer();
-        HandleJump();
+
     }
 
     private void LookAround()
@@ -70,8 +69,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
         _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
         cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
     }
-
-    [System.Obsolete]
+    
     private void MovePlayer()
     {
         // Get movement input
@@ -84,15 +82,15 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
         // Apply movement
         Vector3 velocity = moveDirection.normalized * speed;
-        Vector3 currentVelocity = _rb.velocity;
-        _rb.velocity = new Vector3(velocity.x, currentVelocity.y, velocity.z);
+        Vector3 currentVelocity = _rb.linearVelocity;
+        _rb.linearVelocity = new Vector3(velocity.x, currentVelocity.y, velocity.z);
     }
 
     private void HandleJump()
     {
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
         }
     }
 
