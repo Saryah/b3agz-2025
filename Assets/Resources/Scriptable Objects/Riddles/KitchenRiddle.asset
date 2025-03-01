@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
   m_Name: KitchenRiddle
   m_EditorClassIdentifier: 
-  riddleLine1: 
-  riddleLine2: 
-  riddleLine3: 
-  riddleLine4: 
-  redHerring: {fileID: 0}
-  actualObj: {fileID: 0}
+  riddleLine1: My life is measured in hours
+  riddleLine2: I serve by being devoured
+  riddleLine3: Heat is my enemy
+  riddleLine4: Survival is not my destiny
+  redHerring: {fileID: 11400000, guid: 4cc8bf7e3198aa3468dee710b52f4789, type: 2}
+  actualObj: {fileID: 11400000, guid: 52aec528d4641ff46aae7e8b735da389, type: 2}
