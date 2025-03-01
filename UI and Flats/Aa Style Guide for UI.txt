@@ -1,0 +1,4 @@
+Dark Grey (Banner Background) #23262E
+Medium Grey (Borders) #747474
+Light Grey (Small Text) #A6AAAE
+Off-White (Headings/Icons) #DEDEDE
