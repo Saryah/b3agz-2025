@@ -6,7 +6,6 @@ public class Item : ScriptableObject
     public string itemName;
     public ItemType itemType;
     public int itemID;
-    public string riddle;
     public GameObject itemPrefab;
     public Sprite itemIcon;
 }

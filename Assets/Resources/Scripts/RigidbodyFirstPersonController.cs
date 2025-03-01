@@ -50,12 +50,19 @@ public class RigidbodyFirstPersonController : MonoBehaviour
         LookAround();
         HandleCrouch();
     }
-    
-    private void FixedUpdate()
-    {
 
+    void OnTriggerEnter(Collider other)
+    {
+        RoomMessage.instance.isRiddle = true;
+        RoomMessage.instance.riddle = other.gameObject.GetComponent<Room>().riddle.riddle;
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        RoomMessage.instance.isRiddle = false;
+    }
+    
+    
     private void LookAround()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Held
+  - RedHerring
+  - CorrectObject
   layers:
   - Default
   - TransparentFX

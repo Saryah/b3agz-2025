@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbf2bdbd5d943ee4b811fe64b4b3915b, type: 3}
-  m_Name: TestRedHering
+  m_Name: TestItem
   m_EditorClassIdentifier: 
-  itemName: RedHerring
-  itemType: 0
-  itemID: 1
-  riddle: what is black and blue and red all over
-  itemPrefab: {fileID: 0}
+  itemName: Test Collectable
+  itemType: 1
+  itemID: 2
+  itemPrefab: {fileID: 6801150240078005829, guid: ab83c39104e6e15458e81d6925a34557, type: 3}
   itemIcon: {fileID: 0}

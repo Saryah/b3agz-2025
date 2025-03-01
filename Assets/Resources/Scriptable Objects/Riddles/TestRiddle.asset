@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf2bdbd5d943ee4b811fe64b4b3915b, type: 3}
-  m_Name: TestItem
+  m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
+  m_Name: TestRiddle
   m_EditorClassIdentifier: 
-  itemName: Test Collectable
-  itemType: 1
-  itemID: 2
-  riddle: what is black and blue and red all over
-  itemPrefab: {fileID: 0}
-  itemIcon: {fileID: 0}
+  riddle: What's 1 but not 2
+  redHerring: {fileID: 11400000, guid: 4cc8bf7e3198aa3468dee710b52f4789, type: 2}
+  actualObj: {fileID: 11400000, guid: 52aec528d4641ff46aae7e8b735da389, type: 2}

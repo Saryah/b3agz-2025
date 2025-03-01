@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
@@ -29,21 +30,21 @@ public class ItemPickup : MonoBehaviour
             Debug.Log(hit.collider.gameObject.name);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                GameObject tmpItem = hit.collider.gameObject;
-                itemPickedUp = Resources.Load("Prefabs/" + tmpItem.name) as GameObject;
-                Destroy(hit.collider.gameObject);
+                GameObject item = hit.collider.gameObject;
+                if (item.tag == "RedHerring")
+                {
+                    NewUI.instance.seconds += 10;
+                }
+
+                if (item.tag == "CorrectObject")
+                {
+                    itemPickedUp = item.gameObject;
+                    Player.instance.animator.SetTrigger("Grab");
+                    StartCoroutine(AchievoReached(item));
+                }
             }
         }
-
-        if (!isHolding && itemPickedUp != null)
-            DisplayObject();
-        if (dropOff)
-        {
-            GameObject itemToDestroy = GameObject.FindWithTag("Held");
-            Destroy(itemToDestroy);
-            itemPickedUp = null;
-            isHolding = false;
-        }
+        
     }
 
     void FindObj()
@@ -55,16 +56,20 @@ public class ItemPickup : MonoBehaviour
     {
         GameObject objectToHold = Instantiate(itemPickedUp, itemDisplay);;
         objectToHold.tag = "Held";
-        isHolding = true;
+        //isHolding = true;
+        //StartCoroutine(DestroyHeldItem());
     }
 
-    void OnTriggerEnter(Collider other)
+    
+    IEnumerator AchievoReached(GameObject item)
     {
-        dropOff = true;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        dropOff = false;
+        yield return new WaitForSeconds(1.5f);
+        Destroy(item);
+        DisplayObject();
+        yield return new WaitForSeconds(1f);
+        GameObject objToDestroy = GameObject.FindWithTag("Held");
+        Destroy(objToDestroy,.25f);
+        itemPickedUp = null;
+        
     }
 }

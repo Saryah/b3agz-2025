@@ -2,10 +2,18 @@ using UnityEngine;
 using TMPro;
 public class NewUI : MonoBehaviour
 {
+    public static NewUI instance;
     public TMP_Text timer;
-    float minutes = 0;
-    float seconds = 0;
-    float miliseconds = 0;
+    public float minutes = 0;
+    public float seconds = 0;
+    public float miliseconds = 0;
+
+    void Awake()
+    {
+        if (instance != null)
+            Destroy(instance);
+        instance = this;
+    }
 
     void Update()
     {
