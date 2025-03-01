@@ -1,9 +1,9 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 public class NewUI : MonoBehaviour
 {
     public static NewUI instance;
-    public TMP_Text timer;
+    public Text timer;
     public float minutes = 0;
     public float seconds = 0;
     public float miliseconds = 0;

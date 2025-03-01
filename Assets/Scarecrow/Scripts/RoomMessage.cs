@@ -1,13 +1,13 @@
 using System;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RoomMessage : MonoBehaviour
 {
     public static RoomMessage instance;
-    public string riddle;
+    public string riddle1, riddle2, riddle3, riddle4;
     public bool isRiddle = false;
-    [SerializeField] private TMP_Text riddleText;
+    [SerializeField] private Text riddleText1, riddleText2, riddleText3, riddleText4;
     [SerializeField] private GameObject achievoObj;
     //public Collider[] roomColidersList;
 
@@ -22,7 +22,10 @@ public class RoomMessage : MonoBehaviour
     void Update()
     {
         achievoObj.SetActive(isRiddle);
-        riddleText.text = riddle;
+        riddleText1.text = riddle1;
+        riddleText2.text = riddle2;
+        riddleText3.text = riddle3;
+        riddleText4.text = riddle4;
     }
 
     

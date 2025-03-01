@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d45262acba110ff47b560a004db43be4
+guid: 7bfdaa307544c0b4a9b676f252041ede
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -147,12 +147,100 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Achievo_Banner_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 1949
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 18, y: 15, z: 16, w: 14}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1964f7d17ea6b1740a9ba7f65ab3f9b1
+      internalID: 1595611279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Achievo_Banner_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 313
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 42, y: 49, z: 43, w: 41}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dec3bbc2262eb8428dffe947170bacc
+      internalID: 1637239218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Achievo_Banner_2
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 91
+        width: 97
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656c08268196493438667cd6e6b35074
+      internalID: -1902700729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Achievo_Banner_3
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 95
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1fe709291f6be498b902ae47082175
+      internalID: 498090204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 25a1cc39e343e8344919c9e30bcba444
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +249,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Achievo_Banner_0: 1595611279
+      Achievo_Banner_1: 1637239218
+      Achievo_Banner_2: -1902700729
+      Achievo_Banner_3: 498090204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

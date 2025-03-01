@@ -54,7 +54,10 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         RoomMessage.instance.isRiddle = true;
-        RoomMessage.instance.riddle = other.gameObject.GetComponent<Room>().riddle.riddle;
+        RoomMessage.instance.riddle1 = other.gameObject.GetComponent<Room>().riddle.riddleLine1;
+        RoomMessage.instance.riddle2 = other.gameObject.GetComponent<Room>().riddle.riddleLine2;
+        RoomMessage.instance.riddle3 = other.gameObject.GetComponent<Room>().riddle.riddleLine3;
+        RoomMessage.instance.riddle4 = other.gameObject.GetComponent<Room>().riddle.riddleLine4;
     }
 
     void OnTriggerExit(Collider other)
