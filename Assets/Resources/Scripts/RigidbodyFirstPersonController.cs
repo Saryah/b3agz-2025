@@ -53,16 +53,41 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        RoomMessage.instance.isRiddle = true;
-        RoomMessage.instance.riddle1 = other.gameObject.GetComponent<Room>().riddle.riddleLine1;
-        RoomMessage.instance.riddle2 = other.gameObject.GetComponent<Room>().riddle.riddleLine2;
-        RoomMessage.instance.riddle3 = other.gameObject.GetComponent<Room>().riddle.riddleLine3;
-        RoomMessage.instance.riddle4 = other.gameObject.GetComponent<Room>().riddle.riddleLine4;
+        if (other.gameObject.tag == "Room")
+        {
+            RoomMessage.instance.isRiddle = true;
+            RoomMessage.instance.riddle1 = other.gameObject.GetComponent<Room>().riddle.riddleLine1;
+            RoomMessage.instance.riddle2 = other.gameObject.GetComponent<Room>().riddle.riddleLine2;
+            RoomMessage.instance.riddle3 = other.gameObject.GetComponent<Room>().riddle.riddleLine3;
+            RoomMessage.instance.riddle4 = other.gameObject.GetComponent<Room>().riddle.riddleLine4;
+        }
+
+        
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Door")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                bool theBool = other.gameObject.GetComponent<Animator>().GetBool("Open");
+                if (theBool)
+                {
+                    other.gameObject.GetComponent<Animator>().SetBool("Open", false);
+                }
+                else
+                {
+                    other.gameObject.GetComponent<Animator>().SetBool("Open", true);
+                }
+            }
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        RoomMessage.instance.isRiddle = false;
+        if(other.gameObject.tag == "Room")
+            RoomMessage.instance.isRiddle = false;
     }
     
     
