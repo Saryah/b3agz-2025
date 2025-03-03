@@ -42,6 +42,21 @@ public class ItemPickup : MonoBehaviour
                     Player.instance.animator.SetTrigger("Grab");
                     StartCoroutine(AchievoReached(item));
                 }
+
+                if (item.tag == "Door")
+                {
+                    Animator doorAnim = item.gameObject.GetComponentInParent<Animator>();
+                    bool doorOpen = doorAnim.GetBool("Open");
+                    Debug.Log("Door is " + doorOpen);
+                    if (doorOpen)
+                    {
+                        doorAnim.SetBool("Open", false);
+                    }
+                    else
+                    {
+                        doorAnim.SetBool("Open", true);
+                    }
+                }
             }
         }
         
