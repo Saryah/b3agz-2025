@@ -58,11 +58,11 @@ namespace PSXShaderKit
         [Range(0.0f, 1.0f)]
         [Tooltip("How much the lighting is affected by the angle of surfaces relative to the light. 0 means the lighting intensity is entirely distance based. (ie, surfaces looking away from the light are still lit)")]
         [SerializeField]
-        private float _RetroLightingNormalFactor = 0.0f;
+        public float _RetroLightingNormalFactor = 0.0f;
         [Range(0.0f, 0.9999f)]
         [Tooltip("How far into the light's radius the falloff should start. Higher values make the light look brighter and the falloff more harsh.")]
         [SerializeField]
-        private float _RetroLightFalloffStart = 0.0f;
+        public float _RetroLightFalloffStart = 0.0f;
         [Tooltip("Whether the flat shading light averages the light of all vertices or calculates a new lighting value from the center of the triangle. You can enable flat shading per-material.")]
         [SerializeField]
         private PSXFlatShadingMode _FlatShadingMode = PSXFlatShadingMode.AverageLight;

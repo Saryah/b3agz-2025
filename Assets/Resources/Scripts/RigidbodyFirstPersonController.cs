@@ -3,9 +3,10 @@ using UnityEngine;
 public class RigidbodyFirstPersonController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
-    public float crouchSpeed = 2.5f;
+    public float moveSpeed = 3f;
+    public float crouchSpeed = 1.5f;
     public float jumpForce = 5f;
+    public float sprintSpeed;
 
     [Header("Mouse Settings")]
     public float mouseSensitivity = 2f;
@@ -19,6 +20,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     private float _xRotation = 0f;
     private bool _isCrouching = false;
+    private bool _isSprinting = false;
     [SerializeField] private LayerMask groundLayer;
 
     private void Awake()
@@ -45,10 +47,15 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.inMenu)
+        {
+            return;
+        }
         MovePlayer();
         HandleJump();   
         LookAround();
         HandleCrouch();
+        HandleSprint();
     }
 
     void OnTriggerEnter(Collider other)
@@ -67,21 +74,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Door")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                bool theBool = other.gameObject.GetComponent<Animator>().GetBool("Open");
-                if (theBool)
-                {
-                    other.gameObject.GetComponent<Animator>().SetBool("Open", false);
-                }
-                else
-                {
-                    other.gameObject.GetComponent<Animator>().SetBool("Open", true);
-                }
-            }
-        }
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -113,7 +106,19 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
         // Calculate movement direction relative to where the player is looking
         Vector3 moveDirection = transform.right * moveX + transform.forward * moveZ;
-        float speed = _isCrouching ? crouchSpeed : moveSpeed;
+        float speed = 0f;
+        if (_isCrouching)
+        {
+            speed = crouchSpeed;
+        }
+        if (_isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = moveSpeed;
+        }
 
         // Apply movement
         Vector3 velocity = moveDirection.normalized * speed;
@@ -149,5 +154,16 @@ public class RigidbodyFirstPersonController : MonoBehaviour
         // Smoothly interpolate between standing and crouching scales
         Vector3 targetScale = _isCrouching ? crouchingScale : standingScale;
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * crouchTransitionSpeed);
+    }
+    private void HandleSprint()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _isSprinting = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _isSprinting = false;
+        }
     }
 }

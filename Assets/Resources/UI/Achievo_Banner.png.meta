@@ -236,6 +236,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Achievo_Banner_4
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 35
+        width: 239
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f34bd7e5c2d674dac3e7e85526ae97
+      internalID: -1839493851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -254,6 +276,7 @@ TextureImporter:
       Achievo_Banner_1: 1267820648
       Achievo_Banner_2: 2003899311
       Achievo_Banner_3: 1019417126
+      Achievo_Banner_4: -1839493851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
