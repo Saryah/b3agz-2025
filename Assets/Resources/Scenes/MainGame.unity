@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e96bc921fb9f6845a7994b1abe7b0fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e96bc921fb9f6845a7994b1abe7b0fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4716,7 +4716,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5715203910519076518, guid: f5cce46873b6d6e468094f01912e9e73, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240531033924970565, guid: f5cce46873b6d6e468094f01912e9e73, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6397440886907892728, guid: f5cce46873b6d6e468094f01912e9e73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472223857098904405, guid: f5cce46873b6d6e468094f01912e9e73, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -5546,13 +5558,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767711482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67e265459d2c2564c8f2c602227d16ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 2
-  cameraTransform: {fileID: 1856271163}
 --- !u!1 &776952206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6823,6 +6833,14 @@ PrefabInstance:
     - target: {fileID: 4529062612212239654, guid: 1464ef47ee27b744a98c5ecb0ebed62d, type: 3}
       propertyPath: m_LocalPosition.z
       value: -5.521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597845083398856259, guid: 1464ef47ee27b744a98c5ecb0ebed62d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.064986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597845083398856259, guid: 1464ef47ee27b744a98c5ecb0ebed62d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4745
       objectReference: {fileID: 0}
     - target: {fileID: 6456285089280240096, guid: 1464ef47ee27b744a98c5ecb0ebed62d, type: 3}
       propertyPath: m_LocalScale.x
@@ -13161,11 +13179,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8566686004576829206, guid: f2e7981218b6c5640acdea5fa9da3f72, type: 3}
   m_PrefabInstance: {fileID: 1855795468}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1856271163 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4626006526110313118, guid: f5cce46873b6d6e468094f01912e9e73, type: 3}
-  m_PrefabInstance: {fileID: 618450937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857246303
 GameObject:
