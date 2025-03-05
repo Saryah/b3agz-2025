@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 5495291413063943200}
   - component: {fileID: 7492648698744367764}
   - component: {fileID: 4736529768772743592}
+  - component: {fileID: 6397440886907892728}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -356,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433faa8b758afed4f9295b193c697276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PixelationFactor: 0.3
+  _PixelationFactor: 0.586
   _ColorEmulationMode: 3
   _FullscreenColorDepth: {x: 256, y: 256, z: 256}
   _FullscreenDitherDepth: {x: 32, y: 32, z: 32}
@@ -389,6 +390,20 @@ MonoBehaviour:
   _FlatShadingMode: 0
   _TriangleSortMode: 3
   _DepthDebugView: 0
+--- !u!114 &6397440886907892728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176047089572931205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae42c8f78c60684aab6be6c18bd7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  colorblindShader: {fileID: 4800000, guid: b35b8f7ae8cf168488129d5f5f39ebf4, type: 3}
 --- !u!1 &5700831446141732973
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,9 +488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62705a411502ca940b8fe7081fedc644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  crouchSpeed: 2.5
-  jumpForce: 5
+  moveSpeed: 3
+  crouchSpeed: 1.5
+  jumpForce: 3
+  sprintSpeed: 6
   mouseSensitivity: 2
   standingScale: {x: 0.75, y: 0.75, z: 0.75}
   crouchingScale: {x: 0.75, y: 0.5, z: 0.75}

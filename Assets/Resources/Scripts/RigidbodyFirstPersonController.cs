@@ -8,20 +8,20 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     public float jumpForce = 5f;
     public float sprintSpeed;
 
-    [Header("Mouse Settings")]
-    public float mouseSensitivity = 2f;
-
     [Header("Crouch Settings")]
     public Vector3 standingScale = new Vector3(0.75f, 0.75f, 0.75f); // Player scale when standing
     public Vector3 crouchingScale = new Vector3(0.75f, 0.5f, 0.75f); // Player scale when crouching
     public float crouchTransitionSpeed = 5f;
+    
+    [Header("Mouse Settings")]
+    public float mouseSensitivity = 2f;
 
     private Rigidbody _rb;
-    [SerializeField] private Transform cameraTransform;
-    private float _xRotation = 0f;
     private bool _isCrouching = false;
     private bool _isSprinting = false;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform cameraTransform;
+    private float _xRotation = 0f;
 
     private void Awake()
     {
@@ -47,12 +47,12 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.inMenu)
+        if (GameManager.instance is not null && GameManager.instance.inMenu)
         {
             return;
         }
         MovePlayer();
-        HandleJump();   
+        HandleJump();
         LookAround();
         HandleCrouch();
         HandleSprint();
@@ -106,19 +106,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
         // Calculate movement direction relative to where the player is looking
         Vector3 moveDirection = transform.right * moveX + transform.forward * moveZ;
-        float speed = 0f;
-        if (_isCrouching)
-        {
-            speed = crouchSpeed;
-        }
-        if (_isSprinting)
-        {
-            speed = sprintSpeed;
-        }
-        else
-        {
-            speed = moveSpeed;
-        }
+        float speed = _isCrouching ? crouchSpeed: _isSprinting ? sprintSpeed : moveSpeed;
 
         // Apply movement
         Vector3 velocity = moveDirection.normalized * speed;
