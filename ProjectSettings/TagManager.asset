@@ -8,6 +8,10 @@ TagManager:
   - RedHerring
   - CorrectObject
   - Door
+  - Interactable
+  - Interact
+  - Garage
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -17,8 +21,8 @@ TagManager:
   - UI
   - PickableItems
   - Eyes
-  - 
-  - 
+  - Door
+  - Interactable
   - 
   - 
   - 

@@ -1,50 +1,31 @@
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class Door : MonoBehaviour
 {
-    Door door;
-    public bool needsKey;
-    private bool openClose;
-    private bool isOpen;
-    Animator animator;
-    
+    public Animator animator;
+    public bool isOpen;
+    [SerializeField] Collider collider;
 
-    void Awake()
+    void Start()
     {
         animator = GetComponent<Animator>();
-        
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E) && openClose && !needsKey)
-        {
-            isOpen = !isOpen;
-            animator.SetBool("Open", isOpen);
-        }
+        animator.SetBool("Open", isOpen);
+        if (collider == null)
+            return;
+        if(isOpen)
+            collider.enabled = false;
+        else
+            collider.enabled = true;
     }
-
-    void OnTriggerEnter(Collider other)
+    
+    public void OpenDoor()
     {
-        if (!needsKey)
-        {
-            openClose = true;
-            GameManager.instance.intactionUI.SetActive(true);
-            GameManager.instance.interactionButtonText.text = "E";
-            if (isOpen)
-                GameManager.instance.interactionTypeText.text = "To Close Door";
-            else
-                GameManager.instance.interactionTypeText.text = "To Open Door";
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        openClose = false;
-        GameManager.instance.intactionUI.SetActive(false);
-        Debug.Log("Exited Doorway");
+        isOpen = !isOpen;
     }
 }

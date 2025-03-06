@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
+  m_Name: Garage
+  m_EditorClassIdentifier: 
+  riddleLine1: My keys open no locks
+  riddleLine2: I have space but no room
+  riddleLine3: If you wish to escape
+  riddleLine4: Ask me about Loom
+  redHerring: {fileID: 11400000, guid: 5ce8fae4509088e4ca2acaecf6e02790, type: 2}
+  actualObj: {fileID: 11400000, guid: 118be6b53cb50104f8daafd20301bb9d, type: 2}

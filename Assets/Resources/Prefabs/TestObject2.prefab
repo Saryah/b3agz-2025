@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4853363869401274466}
   - component: {fileID: 5160061211184617578}
   - component: {fileID: 19898388589501144}
+  - component: {fileID: -4363545206239277298}
   m_Layer: 6
   m_Name: TestObject2
   m_TagString: RedHerring
@@ -108,3 +109,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4363545206239277298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691932241706638476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85119fd3180b86f46905f0aadfcf46d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0

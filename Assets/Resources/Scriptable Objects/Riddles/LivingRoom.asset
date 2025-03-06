@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
+  m_Name: LivingRoom
+  m_EditorClassIdentifier: 
+  riddleLine1: I am not thin nor slick
+  riddleLine2: I am in fact quite thick
+  riddleLine3: Nice and sticky
+  riddleLine4: Useful and licky
+  redHerring: {fileID: 11400000, guid: 929682eb03537094089a0420b38c6a61, type: 2}
+  actualObj: {fileID: 11400000, guid: 51771bacf48f5ac4cbe8bbd59b2a984b, type: 2}

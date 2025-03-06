@@ -17,6 +17,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     public float mouseSensitivity = 2f;
 
     private Rigidbody _rb;
+    public Camera cam;
     private bool _isCrouching = false;
     private bool _isSprinting = false;
     [SerializeField] private LayerMask groundLayer;
@@ -34,6 +35,8 @@ public class RigidbodyFirstPersonController : MonoBehaviour
     private void Start()
     {
         
+        //Set Camera
+        cam = Camera.main;
         
         _rb = GetComponent<Rigidbody>();
 
@@ -60,14 +63,14 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Room")
+        /*if (other.gameObject.tag == "Room")
         {
             RoomMessage.instance.isRiddle = true;
             RoomMessage.instance.riddle1 = other.gameObject.GetComponent<Room>().riddle.riddleLine1;
             RoomMessage.instance.riddle2 = other.gameObject.GetComponent<Room>().riddle.riddleLine2;
             RoomMessage.instance.riddle3 = other.gameObject.GetComponent<Room>().riddle.riddleLine3;
             RoomMessage.instance.riddle4 = other.gameObject.GetComponent<Room>().riddle.riddleLine4;
-        }
+        }*/
 
         
     }
@@ -79,23 +82,19 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Room")
-            RoomMessage.instance.isRiddle = false;
+        //if(other.gameObject.tag == "Room")
+            //RoomMessage.instance.isRiddle = false;
     }
     
     
     private void LookAround()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-
-        // Rotate the player horizontally
-        transform.Rotate(Vector3.up * mouseX);
-
-        // Rotate the camera vertically
-        _xRotation -= mouseY;
-        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
-        cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+      // Rotation
+		Vector2 mouseDelta = mouseSensitivity * new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
+		Quaternion rotation = cam.transform.rotation;
+		Quaternion horiz = Quaternion.AngleAxis(mouseDelta.x, Vector3.up);
+		Quaternion vert = Quaternion.AngleAxis(mouseDelta.y, Vector3.right);
+		cam.transform.rotation = horiz * rotation * vert;
     }
     
     private void MovePlayer()
@@ -105,7 +104,7 @@ public class RigidbodyFirstPersonController : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");   // W/S for forward/backward
 
         // Calculate movement direction relative to where the player is looking
-        Vector3 moveDirection = transform.right * moveX + transform.forward * moveZ;
+        Vector3 moveDirection = cam.transform.right * moveX + cam.transform.forward * moveZ;
         float speed = _isCrouching ? crouchSpeed: _isSprinting ? sprintSpeed : moveSpeed;
 
         // Apply movement
