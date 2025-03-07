@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
+  m_Name: Bathroom
+  m_EditorClassIdentifier: 
+  riddleLine1: I can help keep it clean
+  riddleLine2: "I\u2019ll bristle and I\u2019ll preen"
+  riddleLine3: If you can handle me
+  riddleLine4: Cleanliness it shall be
+  redHerring: {fileID: 11400000, guid: 28b6205c12df548459d20884228ff28d, type: 2}
+  actualObj: {fileID: 11400000, guid: 2ffc8f172b9758740bcd7e08e786c796, type: 2}

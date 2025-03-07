@@ -39,7 +39,7 @@ public class PlayerLook : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag(DoorTag))
             {
                 GameManager.instance.interactionButtonText.text = "E";
-                GameManager.instance.interactionTypeText.text = "To Move To Next Room";
+                GameManager.instance.interactionTypeText.text = "To Open/Close Door";
                 GameManager.instance.interactionUI.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {

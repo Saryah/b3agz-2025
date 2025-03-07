@@ -734,7 +734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443457486698483929}
-  - component: {fileID: 654842385371047316}
   - component: {fileID: 3360331077158250010}
   - component: {fileID: 3398133065920794096}
   m_Layer: 0
@@ -761,27 +760,6 @@ Transform:
   - {fileID: 3349615028009628162}
   m_Father: {fileID: 7992367711941667201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &654842385371047316
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2626804005003908670}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 3.93
-  m_Center: {x: -0.28, y: 0, z: 0.93}
 --- !u!114 &3360331077158250010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,10 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d460e6c36ecc740866d59ebbff7739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needsKey: 0
-  openClose: 0
-  roomsToLoad: []
-  roomsToUnload: []
+  animator: {fileID: 0}
+  isOpen: 0
+  collider: {fileID: 0}
 --- !u!95 &3398133065920794096
 Animator:
   serializedVersion: 7
@@ -2036,10 +2013,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868de27111ef66a46a2a61c3647fb783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateColliderTrigger: {fileID: 8988606823988299263}
-  roomColliderTrigger: {fileID: 0}
-  roomItems: []
-  isStartRoom: 0
+  riddle: {fileID: 0}
+  correctItem: {fileID: 0}
+  wrongItem: {fileID: 0}
+  itemSpawnPoints: []
+  roomComplete: 0
 --- !u!135 &8988606823988299263
 SphereCollider:
   m_ObjectHideFlags: 0

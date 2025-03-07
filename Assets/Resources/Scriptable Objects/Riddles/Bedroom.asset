@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
+  m_Name: Bedroom
+  m_EditorClassIdentifier: 
+  riddleLine1: My body has a dozen heads or more,
+  riddleLine2: "My tails don\u2019t wag when you walk in the door."
+  riddleLine3: Count the ways you can hold me tight,
+  riddleLine4: Or use me for a special night!
+  redHerring: {fileID: 11400000, guid: 91040ad577dbed8459ba7450d32ac976, type: 2}
+  actualObj: {fileID: 11400000, guid: c1c4a407dafbd4c4ba0063139bddb581, type: 2}

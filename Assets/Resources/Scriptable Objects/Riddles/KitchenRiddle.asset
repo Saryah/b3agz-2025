@@ -16,5 +16,5 @@ MonoBehaviour:
   riddleLine2: I serve by being devoured
   riddleLine3: Heat is my enemy
   riddleLine4: Survival is not my destiny
-  redHerring: {fileID: 11400000, guid: 4cc8bf7e3198aa3468dee710b52f4789, type: 2}
-  actualObj: {fileID: 11400000, guid: 52aec528d4641ff46aae7e8b735da389, type: 2}
+  redHerring: {fileID: 11400000, guid: e8318c1db9993f846a50c0bd56914dbb, type: 2}
+  actualObj: {fileID: 11400000, guid: 3f0e1c79d45d4e846afbaed37db5cc30, type: 2}

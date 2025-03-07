@@ -118,6 +118,9 @@ public class RigidbodyFirstPersonController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+            AudioClip clipToPlay = Player.instance.jumping[Random.Range(0, Player.instance.jumping.Length)];
+            GameObject.Find("SFX").GetComponent<AudioSource>().clip = clipToPlay;
+            GameObject.Find("SFX").GetComponent<AudioSource>().Play();
         }
     }
 
@@ -129,14 +132,14 @@ public class RigidbodyFirstPersonController : MonoBehaviour
 
     private void HandleCrouch()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.C))
         {
-            _isCrouching = true;
+            _isCrouching = !_isCrouching;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        /*else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             _isCrouching = false;
-        }
+        }*/
 
         // Smoothly interpolate between standing and crouching scales
         Vector3 targetScale = _isCrouching ? crouchingScale : standingScale;

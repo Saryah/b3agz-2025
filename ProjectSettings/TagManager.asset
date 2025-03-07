@@ -12,6 +12,8 @@ TagManager:
   - Interact
   - Garage
   - Pickup
+  - SFX
+  - BMG
   layers:
   - Default
   - TransparentFX

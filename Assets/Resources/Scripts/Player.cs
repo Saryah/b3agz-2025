@@ -3,6 +3,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    public string playerName = "";
+    public float masterVolume, bgmVolume, sfxVolume, shaderIntensity, lightIntensity, lightDistance;
+    public int colorBlind;
+    public AudioClip[] correct, incorrect, jumping, falling;
 
     public Animator animator;
     void Awake()
@@ -10,17 +14,6 @@ public class Player : MonoBehaviour
         if(instance != null)
             Destroy(instance);
         instance = this;
-        animator = GetComponent<Animator>();
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DontDestroyOnLoad(this);
     }
 }

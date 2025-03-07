@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7095c9bea7d20bc449cd9cd65bea2bd8, type: 3}
   m_Name: OfficeRiddle
   m_EditorClassIdentifier: 
-  riddleLine1: I am not thin nor slick
-  riddleLine2: I am in fact quite thick
-  riddleLine3: Nice and sticky
-  riddleLine4: Useful and licky
-  redHerring: {fileID: 11400000, guid: 4cc8bf7e3198aa3468dee710b52f4789, type: 2}
-  actualObj: {fileID: 11400000, guid: 52aec528d4641ff46aae7e8b735da389, type: 2}
+  riddleLine1: With pointed fangs I sit and wait
+  riddleLine2: With piercing force I crunch out fate
+  riddleLine3: 'Grabbing victims, proclaiming might '
+  riddleLine4: Physically joining with a single bite
+  redHerring: {fileID: 11400000, guid: dabaa783d64476e4f9dc9d0a370f30b2, type: 2}
+  actualObj: {fileID: 11400000, guid: c73500dd2717961498df4d307c078bb5, type: 2}
